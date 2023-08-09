@@ -25,10 +25,11 @@ public class Car : MonoBehaviour
     //여러 개의 변수가 있을 때 서로 고유의 메모리 공간을 가진다
     char character = 'H';
 
-    int num = 10000;
+    public int num = 10000;
 
-    float pi = 3.141592f;
+    private float pi = 3.141592f;
 
+    //접근 지정자를 선언하지 않으면 private로 선언    
     string name = "Sonata";
 
     //변수의 이름 규칙
@@ -67,5 +68,41 @@ public class Car : MonoBehaviour
 
     #endregion
 
+    #region 함수
+    //하나의 특별한 목적의 작업을 수행하기
+    //위해 독립적으로 설계된 코드의 집합입니다
 
+    private void Stop(){
+        Debug.Log("정지");
+    }
+
+    private void Update(){
+        //조건문이란?
+        //어떤 조건이 주어질 때 해당 조건에 따라
+        //동작을 수행하도록 실행하는 명령문입니다.
+
+        //if문이란?
+        //어떤 특정한 조건을 비교하여 조건이 맞다면
+        //실행되는 명령문입니다
+        
+        // GetKeyDown : Key를 눌렀을때
+        if(Input.GetKeyDown(KeyCode.Space)){
+            Stop();
+        }
+        else if(Input.GetKeyDown(KeyCode.Q)){
+            Debug.Log("핸들 조정");
+        }
+        else{
+            Debug.Log("시동꺼짐");
+        }
+        // else if 문
+        // if문의 조건이 틀릴 때 else if문의 조건이 맞다면
+        // 실행되는 명령문
+
+        //else문
+        // if문과 else if문의 조건이 다 틀리면
+        // 실행되는 명령문  
+    }
+
+    #endregion
 }
